@@ -1,4 +1,4 @@
-/*package com.akshar.iot.smarthome.mqtt.subscriber;
+package com.akshar.iot.smarthome.mqtt.subscriber;
 
 import java.sql.Timestamp;
 
@@ -17,12 +17,12 @@ import com.akshar.iot.smarthome.configuration.MQTTConfig;
 
 
 
-*//**
+/**
  * MQTT Subscriber Class
  * 
  * @author Raju 
  *
- *//*
+ */
 
 @Component
 public class MQTTSubscriber extends MQTTConfig implements MqttCallback, MQTTSubscriberBase {
@@ -41,25 +41,25 @@ public class MQTTSubscriber extends MQTTConfig implements MqttCallback, MQTTSubs
 		this.config();
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see org.eclipse.paho.client.mqttv3.MqttCallback#connectionLost(java.lang.
 	 * Throwable)
-	 
+	 */
 	@Override
 	public void connectionLost(Throwable cause) {
 		logger.info("Connection Lost");
 
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see
 	 * org.eclipse.paho.client.mqttv3.MqttCallback#messageArrived(java.lang.String,
 	 * org.eclipse.paho.client.mqttv3.MqttMessage)
-	 
+	 */
 	@Override
 	public void messageArrived(String topic, MqttMessage message) throws Exception {
 		// Called when a message arrives from the server that matches any
@@ -73,26 +73,26 @@ public class MQTTSubscriber extends MQTTConfig implements MqttCallback, MQTTSubs
 		System.out.println();
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see
 	 * org.eclipse.paho.client.mqttv3.MqttCallback#deliveryComplete(org.eclipse.paho
 	 * .client.mqttv3.IMqttDeliveryToken)
-	 
+	 */
 	@Override
 	public void deliveryComplete(IMqttDeliveryToken token) {
 		// Leave it blank for subscriber
 
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see
 	 * com.monirthought.mqtt.subscriber.MQTTSubscriberBase#subscribeMessage(java.
 	 * lang.String)
-	 
+	 */
 	@Override
 	public void subscribeMessage(String topic) {
 		try {
@@ -104,11 +104,11 @@ public class MQTTSubscriber extends MQTTConfig implements MqttCallback, MQTTSubs
 		}
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.monirthought.mqtt.subscriber.MQTTSubscriberBase#disconnect()
-	 
+	 */
 	public void disconnect() {
 		try {
 			this.mqttClient.disconnect();
@@ -117,12 +117,12 @@ public class MQTTSubscriber extends MQTTConfig implements MqttCallback, MQTTSubs
 		}
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.monirthought.config.MQTTConfig#config(java.lang.String,
 	 * java.lang.Integer, java.lang.Boolean, java.lang.Boolean)
-	 
+	 */
 	@Override
 	protected void config(String broker, Integer port, Boolean ssl, Boolean withUserNamePass) {
 
@@ -154,11 +154,11 @@ public class MQTTSubscriber extends MQTTConfig implements MqttCallback, MQTTSubs
 
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.monirthought.config.MQTTConfig#config()
-	 
+	 */
 	@Override
 	protected void config() {
 		logger.info("------------MQTT Subscriber-----------");
@@ -181,4 +181,3 @@ public class MQTTSubscriber extends MQTTConfig implements MqttCallback, MQTTSubs
 	}
 
 }
-*/

@@ -1,4 +1,4 @@
-/*package com.akshar.iot.smarthome.configuration;
+package com.akshar.iot.smarthome.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,4 +24,3 @@ public class MessageListener implements Runnable{
 	}
 
 }
-*/

@@ -1,4 +1,4 @@
-/*package com.akshar.iot.smarthome.mqtt.publisher;
+package com.akshar.iot.smarthome.mqtt.publisher;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
@@ -15,13 +15,13 @@ import com.akshar.iot.smarthome.configuration.MQTTConfig;
 
 
 
-*//**
+/**
  * MQTT Publisher class
  * 
  * @author Raju 
  * @version 1.0.0
  *
- *//*
+ */
 @Component
 public class MQTTPublisher extends MQTTConfig implements MqttCallback,  MQTTPublisherBase{
 
@@ -36,30 +36,30 @@ public class MQTTPublisher extends MQTTConfig implements MqttCallback,  MQTTPubl
 
 	private static final Logger logger = LoggerFactory.getLogger(MQTTPublisher.class);
 
-	*//**
+	/**
 	 * Private default constructor
-	 *//*
+	 */
 	private MQTTPublisher() {
 		this.config();
 	}
 
-	*//**
+	/**
 	 * Private constructor
-	 *//*
+	 */
 	private MQTTPublisher(String broker, Integer port, Boolean ssl, Boolean withUserNamePass) {
 		this.config(broker, port, ssl, withUserNamePass);
 	}
 
-	*//**
+	/**
 	 * Factory method to get instance of MQTTPublisher
 	 * 
 	 * @return MQTTPublisher
-	 *//*
+	 */
 	public static MQTTPublisher getInstance() {
 		return new MQTTPublisher();
 	}
 
-	*//**
+	/**
 	 * Factory method to get instance of MQTTPublisher
 	 * 
 	 * @param broker
@@ -67,17 +67,17 @@ public class MQTTPublisher extends MQTTConfig implements MqttCallback,  MQTTPubl
 	 * @param ssl
 	 * @param withUserNamePass
 	 * @return MQTTPublisher
-	 *//*
+	 */
 	public static MQTTPublisher getInstance(String broker, Integer port, Boolean ssl, Boolean withUserNamePass) {
 		return new MQTTPublisher(broker, port, ssl, withUserNamePass);
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see
 	 * com.bjitgroup.jasmysp.mqtt.publisher.MQTTPublisherBase#configurePublisher()
-	 
+	 */
 	@Override
 	protected void config() {
 		logger.info("---------------MQTT Config--------------");
@@ -94,13 +94,13 @@ public class MQTTPublisher extends MQTTConfig implements MqttCallback,  MQTTPubl
 		}
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see
 	 * com.bjitgroup.jasmysp.mqtt.publisher.MQTTPublisherBase#configurePublisher(
 	 * java.lang.String, java.lang.Integer, java.lang.Boolean, java.lang.Boolean)
-	 
+	 */
 	@Override
 	protected void config(String broker, Integer port, Boolean ssl, Boolean withUserNamePass) {
 
@@ -132,10 +132,10 @@ public class MQTTPublisher extends MQTTConfig implements MqttCallback,  MQTTPubl
 	}
 
 
-	
+	/*
 	 * (non-Javadoc)
 	 * @see com.monirthought.mqtt.publisher.MQTTPublisherBase#publishMessage(java.lang.String, java.lang.String)
-	 
+	 */
 	@Override
 	public void publishMessage(String topic, String message) {
 
@@ -149,40 +149,40 @@ public class MQTTPublisher extends MQTTConfig implements MqttCallback,  MQTTPubl
 
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.paho.client.mqttv3.MqttCallback#connectionLost(java.lang.Throwable)
-	 
+	 */
 	@Override
 	public void connectionLost(Throwable arg0) {
 		logger.info("Connection Lost");
 
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.paho.client.mqttv3.MqttCallback#deliveryComplete(org.eclipse.paho.client.mqttv3.IMqttDeliveryToken)
-	 
+	 */
 	@Override
 	public void deliveryComplete(IMqttDeliveryToken arg0) {
 		logger.info("delivery completed");
 
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.paho.client.mqttv3.MqttCallback#messageArrived(java.lang.String, org.eclipse.paho.client.mqttv3.MqttMessage)
-	 
+	 */
 	@Override
 	public void messageArrived(String arg0, MqttMessage arg1) throws Exception {
 		// Leave it blank for Publisher
 
 	}
 
-	
+	/*
 	 * (non-Javadoc)
 	 * @see com.monirthought.mqtt.publisher.MQTTPublisherBase#disconnect()
-	 
+	 */
 	@Override
 	public void disconnect() {
 		try {
@@ -193,4 +193,3 @@ public class MQTTPublisher extends MQTTConfig implements MqttCallback,  MQTTPubl
 	}
 	
 }
-*/

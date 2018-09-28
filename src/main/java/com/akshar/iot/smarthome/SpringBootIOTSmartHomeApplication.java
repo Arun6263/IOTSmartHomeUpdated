@@ -22,7 +22,8 @@ public class SpringBootIOTSmartHomeApplication extends SpringBootServletInitiali
 	
 	public final static Logger LOGGER = LoggerFactory.getLogger(SpringBootIOTSmartHomeApplication.class);
 	
-	
+	@Autowired
+	Runnable MessageListener;
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -38,6 +39,14 @@ public class SpringBootIOTSmartHomeApplication extends SpringBootServletInitiali
 	
 	
 	
+	@Bean
+	public CommandLineRunner schedulingRunner(TaskExecutor executor) {
+	    return new CommandLineRunner() {
+	        public void run(String... args) throws Exception {
+	            executor.execute(MessageListener);
+	        }
+	    };
+	}
 }
 
 
