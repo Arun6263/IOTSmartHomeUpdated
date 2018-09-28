@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>IoT App- SMARTHOME</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" th:href="@{/public/vendors/iconfonts/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/public/vendors/css/vendor.bundle.base.css}">
+  <link rel="stylesheet" th:href="@{/public/vendors/css/vendor.bundle.addons.css}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/public/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/public/images/favicon.png}" />
+  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <script> 
+    $(function(){
+      $("#includedHeader").load("public/header.html"); 
+      $("#includedSideBar").load("public/sidebar.html"); 
+    });
+    </script>
+</head>
+
+<body>
+  <div class="container-scroller">
+   <!-- Header.html -->
+    <div id="includedHeader"></div>
+    <!-- Header -->
+    
+    <div class="container-fluid page-body-wrapper">
+    
+      <!-- sidebar.html -->
+  <div id="includedSideBar"></div>
+      <!-- Sidebar -->
+
+      <div class="main-panel">
+        <div class="content-wrapper">
+<div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="card-title">User Base</h1>
+                  <p class="card-description">
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+
+                          <th>
+                            User Name
+                          </th>
+                          <th>
+                            Email Id
+                          </th>
+                          <th>
+                            Contact Number
+                          </th>
+                          <th>
+                            Status
+                          </th>
+						
+                        </tr>
+                      </thead>
+                    <th:block th:each="user : ${listOfUser}">
+                        <tr>
+                       
+                          <td class="py-1" >
+                          <span> <img src="public/images/faces-clipart/pic-1.png" alt="image" /></span>
+                          <span  th:text="${user.firstName}"></span>
+                          </td>
+                          <td th:text="${user.emailId}"> </td>
+                          <td th:text="${user.phoneNo}"> </td>
+                          <td>
+                          <label class="badge badge-danger">Suspended</label>
+                          </td>
+						  <td>
+						   <button type="button" class="btn btn-icons btn-rounded btn-outline-warning">
+                          <i class="mdi mdi-pencil-box"></i>
+                        </button>
+						  </td>
+                        </tr>
+                         
+                      
+                      </c:forEach>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+		</div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018
+              <a href="#" target="_blank">IoT App---SmartHome</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with
+              <i class="mdi mdi-heart text-danger"></i>
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="public/vendors/js/vendor.bundle.base.js"></script>
+  <script src="public/vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="public/js/off-canvas.js"></script>
+  <script src="public/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>

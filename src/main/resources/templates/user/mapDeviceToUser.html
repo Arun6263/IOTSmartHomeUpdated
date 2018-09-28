@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>SMARTHOME- IoT App</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" th:href="@{/public/vendors/iconfonts/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/public/vendors/css/vendor.bundle.base.css}">
+  <link rel="stylesheet" th:href="@{/public/vendors/css/vendor.bundle.addons.css}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/public/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/public/images/favicon.png}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <script> 
+    $(function(){
+      $("#includedHeader").load("public/header.html"); 
+      $("#includedSideBar").load("public/sidebar.html"); 
+    });
+    </script>
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- Header.html -->
+    <div id="includedHeader"></div>
+    <!-- Header -->
+    
+    <div class="container-fluid page-body-wrapper">
+    
+      <!-- sidebar.html -->
+  <div id="includedSideBar"></div>
+      <!-- Sidebar -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title float-center">Map New Device</h2>
+                  
+				  <form class="forms-sample" role="form" method="POST" action="/saveUserDevices" modelattribute="userDeviceForm">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Select Username </label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="userId">
+							<option value=""> -- </option>
+							<option value="4">arun</option>
+							<option value="5">arun</option>					  
+                            </select>
+                          </div>
+                        </div>
+						<div class="form-group">
+							<label for="exampleInputEmail3">Device Controller Code</label>
+							<input type="tezt" class="form-control" id="exampleInputDeviceCode" placeholder="Device Code" name="controlBoxCode">
+						</div>
+							<div class="form-group">
+							<label for="exampleInputPassword4">Device Controller Name</label>
+							<input type="text" class="form-control" id="exampleInputDeviceName" placeholder="Device Name" name="controlBoxName">
+						</div>
+
+                         <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Device Code</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="deviceId">
+                              <option value=""> -- </option>
+									
+                            </select>
+                          </div>
+                        </div>
+						</form></div>
+							<div class="form-group">
+							<label for="exampleInputPassword4">Device Controller Name</label>
+							<input type="text" class="form-control" id="exampleInputDeviceName" placeholder="Device Name" name="deviceName">
+						</div>
+
+
+                    <button type="submit" class="btn btn-success mr-2">Map Device</button>
+                    <button class="btn btn-light">Cancel</button>
+                  
+                </div>
+              </div>
+            </div>	
+         </div>
+  </div>
+			<!-- CHART ENDS -->
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018
+              <a href="#" target="_blank">IoT App- SmartHome</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with
+              <i class="mdi mdi-heart text-danger"></i>
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="public/vendors/js/vendor.bundle.base.js"></script>
+  <script src="public/vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="public/js/off-canvas.js"></script>
+  <script src="public/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="public/js/dashboard.js"></script>
+  <script src="public/js/chart.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
